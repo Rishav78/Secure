@@ -36,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+
+        if(mAuth.getCurrentUser() != null) {
+            nextActivity();
+        }
+
         buttonSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,11 +84,15 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Try Again", Toast.LENGTH_SHORT).show();
                             return;
                         }
-
-                        Intent intent = new Intent(MainActivity.this, Signup.class);
-                        startActivity(intent);
+                        nextActivity();
 
                     }
                 });
+    }
+
+    private void nextActivity() {
+        Intent intent = new Intent(MainActivity.this, PasswordScreen.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 }
