@@ -15,6 +15,7 @@
         android:layout_centerInParent="true">
 
         <EditText
+            android:id="@+id/signupEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_username"
@@ -27,6 +28,7 @@
             />
 
         <EditText
+            android:id="@+id/signupPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_password"
@@ -40,6 +42,7 @@
             />
 
         <EditText
+            android:id="@+id/signupConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_password"
@@ -53,6 +56,7 @@
             />
 
         <Button
+            android:id="@+id/signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

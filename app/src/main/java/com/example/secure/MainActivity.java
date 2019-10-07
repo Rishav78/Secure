@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextEmail, editTextPassword;
     Button buttonSignin;
     FirebaseAuth mAuth;
+    TextView signup;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
         buttonSignin = (Button) findViewById(R.id.signin);
+        signup = (TextView) findViewById(R.id.signuptext);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -38,7 +42,19 @@ public class MainActivity extends AppCompatActivity {
                 SigninUser();
             }
         });
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                CreateANewUser();
+            }
+        });
+
+    }
+
+    private void CreateANewUser() {
+        Intent intent = new Intent(MainActivity.this, Signup.class);
+        startActivity(intent);
     }
 
     private void SigninUser() {
