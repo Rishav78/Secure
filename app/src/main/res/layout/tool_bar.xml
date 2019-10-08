@@ -3,12 +3,28 @@
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:background="#333333"
     >
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Secure"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:background="#333333"
-        />
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Secure"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/userfield_background"
+            android:layout_alignParentLeft="true"
+            />
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Logout"
+            android:textColor="@color/white"
+            android:background="#262626"
+            />
+    </RelativeLayout>
 </androidx.appcompat.widget.Toolbar>

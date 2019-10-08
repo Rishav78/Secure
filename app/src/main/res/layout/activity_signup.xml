@@ -52,6 +52,7 @@
             android:padding="3dp"
             android:hint="Confirm Password"
             android:textColorHint="@color/white"
+            android:inputType="textPassword"
             android:background="@drawable/userfield_background"
             />
 
@@ -63,6 +64,7 @@
             android:padding="3dp"
             android:textColor="@color/white"
             android:background="@drawable/userfield_background"
+            android:inputType="textPassword"
             android:text="Sign up" />
     </LinearLayout>
 

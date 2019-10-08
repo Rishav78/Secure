@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -33,7 +34,7 @@ public class PasswordScreen extends AppCompatActivity {
     FloatingActionButton addNewEntity;
     AlertDialog.Builder alert;
     FirebaseAuth mAuth;
-
+    Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,8 @@ public class PasswordScreen extends AppCompatActivity {
         addNewEntity = (FloatingActionButton) findViewById(R.id.newPassword);
         passwordView = (RecyclerView) findViewById(R.id.passwords);
         passwordView.setLayoutManager(new LinearLayoutManager(PasswordScreen.this));
+        logout = (Button) findViewById(R.id.logout);
+
 
         database.addValueEventListener(new ValueEventListener() {
             @Override
@@ -120,6 +123,16 @@ public class PasswordScreen extends AppCompatActivity {
                     }
                 });
                 diaglog.show();
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent = new Intent(PasswordScreen.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         });
 
