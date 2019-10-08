@@ -46,6 +46,24 @@ public class Signup extends AppCompatActivity {
                 password = editTextPassword.getText().toString().trim(),
                 confirmPassword = editTextConfirmPassword.getText().toString().trim();
 
+        if(email.isEmpty()) {
+            editTextUsername.setError("Email field can't be empty");
+            editTextUsername.requestFocus();
+            return;
+        }
+
+        if(password.isEmpty()) {
+            editTextPassword.setError("Password field can't be empty");
+            editTextPassword.requestFocus();
+            return;
+        }
+
+        if(confirmPassword.isEmpty()) {
+            editTextConfirmPassword.setError("Confirm your password for safty");
+            editTextConfirmPassword.requestFocus();
+            return;
+        }
+
         if(password.compareTo(confirmPassword)!= 0) {
             Toast.makeText(Signup.this, "Password did not match", Toast.LENGTH_SHORT).show();
             return;

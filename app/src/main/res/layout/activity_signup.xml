@@ -37,6 +37,7 @@
             android:padding="3dp"
             android:hint="Password"
             android:textColorHint="@color/white"
+            android:inputType="textPassword"
             android:background="@drawable/userfield_background"
             android:layout_marginTop="10dp"
             />
@@ -64,9 +65,15 @@
             android:padding="3dp"
             android:textColor="@color/white"
             android:background="@drawable/userfield_background"
-            android:inputType="textPassword"
             android:text="Sign up" />
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
 
 
 </RelativeLayout>
