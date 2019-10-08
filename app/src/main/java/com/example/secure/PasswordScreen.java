@@ -110,9 +110,9 @@ public class PasswordScreen extends AppCompatActivity {
                         String key = database.push().getKey();
                         PasswordModel ps;
                         if(TextUtils.isEmpty(websitename))
-                            ps = new PasswordModel(usrname, pswd);
+                            ps = new PasswordModel(key, usrname, pswd);
                         else
-                            ps = new PasswordModel(websitename, usrname, pswd);
+                            ps = new PasswordModel(key, websitename, usrname, pswd);
 
                         database.child(key).setValue(ps);
                         diaglog.dismiss();
