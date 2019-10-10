@@ -67,12 +67,14 @@ public class MainActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString();
 
         if (email.isEmpty()) {
-            Toast.makeText(MainActivity.this, "Enter your Email", Toast.LENGTH_SHORT).show();
+            editTextEmail.setError("This field can not be empty");
+            editTextEmail.requestFocus();
             return;
         }
 
         if (password.isEmpty()) {
-            Toast.makeText(MainActivity.this, "Enter your Password", Toast.LENGTH_SHORT).show();
+            editTextPassword.setError("This field can not be empty");
+            editTextPassword.requestFocus();
             return;
         }
 
